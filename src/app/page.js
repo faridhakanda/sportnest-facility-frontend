@@ -17,7 +17,7 @@ export default async function Home() {
     <div>
         <h2>Facilities data set!</h2>
         <p>{facilities.length}</p>
-        <div className="grid grid-cols-3 max-w-6xl  mx-auto gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 max-w-6xl  mx-auto gap-2">
             {facilities.map(facility => 
                 <div className="bg-purple-200 m-1 text-black p-2 w-96 rounded-md" key={facility._id}>
                     <h2>Facility name: {facility.name}</h2>
