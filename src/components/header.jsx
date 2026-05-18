@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <nav className='bg-slate-50 flex p-2 items-center justify-around'>
+        <nav className='bg-slate-50 shadow-sm flex p-2 items-center justify-around'>
             <div>Header Part</div>
             <div className='space-x-4'>
                 <Link href={'/'}>Home</Link>
