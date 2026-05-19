@@ -1,4 +1,6 @@
+import { Button } from "@heroui/react";
 import React from "react";
+import Link from "next/link";
 
 const FacilityCard = ({facility}) => {
   return (
@@ -24,6 +26,12 @@ const FacilityCard = ({facility}) => {
       <p>Description: {facility.description}</p>
       <p>Owner email: {facility.owner_email}</p>
       <p>Facility booking count: {facility.booking_count}</p>
+      {/* <Link href={`/facilities/${facility._id}`}>
+        <Button className={' bg-purple-400 rounded-md'} variant="outline">
+            See details...
+        </Button>
+      </Link> */}
+      
     </div>
   );
 };
