@@ -15,13 +15,20 @@ export default async function Home() {
   //     NotFoundPage();
 
   // }
-  console.log(facilities);
+  //console.log(facilities);
+  if (!facilities) {
+    return (
+        <div>
+            <span className="loading loading-ring loading-xl"></span>
+        </div>
+    )
+  }
   return (
     <div className="grid my-2">
-      <div className="bg-purple-200 w-[1200px] p-2 rounded-md mx-auto">
+      <div className="bg-purple-200 w-3/4 p-2 rounded-md mx-auto">
         <h2>Facilities for the sportnest.</h2>
       </div>
-      <div className="grid grid-cols-3  mx-auto gap-4 my-2">
+      <div className="grid grid-cols-1 md:grid-cols-3  mx-auto gap-4 my-2">
         {/* <h2>Facilities data set!</h2>
             <p>{facilities.length}</p> */}
         {facilities.map((facility) => (
