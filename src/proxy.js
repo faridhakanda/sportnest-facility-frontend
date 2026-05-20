@@ -12,7 +12,7 @@ export async function proxy(request) {
     //     return NextResponse.redirect(new URL('/login', request.url))
     // }
     
-
+    
     try {
         const session = await auth.api.getSession({
             headers: await headers()
@@ -22,7 +22,7 @@ export async function proxy(request) {
         }
         return NextResponse.next();
         //return { redirect: false, session };
-
+    
     } catch(error) {
         console.error('Proxy Session Error: ', error);
         return { redirect: true, url: '/login'};
