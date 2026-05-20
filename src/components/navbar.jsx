@@ -8,7 +8,7 @@ const Navbar = () => {
     
     const {
         data: session,
-        isPending,
+        
     } = authClient.useSession()
     console.log(session, 'session data');
     const user = session?.user;
@@ -26,7 +26,19 @@ const Navbar = () => {
                 <Link href={'/facilities'}>Facility</Link>
                 <Link href={'/add-facility'}>Add Facility</Link>
                 <Link href={'/contact'}>Contact Us</Link>
-                {isPending ? 
+                {user ? 
+                    <div className='flex items-center gap-3'>
+                        <h2>{user?.name}</h2>
+                        <Link onClick={handleLogout}  href={'/login'}>Logout</Link>
+                    </div>
+                    :
+                    <div className='flex gap-3'>
+                        <Link href={'/login'}>Login</Link>
+                        <Link href={'/signup'}>SignUp</Link>
+                    </div>
+                }
+                
+                {/* {isPending ? 
                     (<h2>Loading...</h2>)
                     :
                     (user ? 
@@ -40,7 +52,7 @@ const Navbar = () => {
                             <Link href={'/signup'}>SignUp</Link>
                         </div>
                     )
-                }
+                } */}
                 
                 
             </div>
